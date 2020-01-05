@@ -150,42 +150,147 @@ main {
     display: none;
   }
 
-  // This works below for hover effect but background fully goes away and sizing is off;
-  // .item {
-  //   position: relative;
-  //   overflow: hidden;
-  // }
-  // .item > a img {
-  //   transition: all 0.2s ease;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   opacity: 1;
-  //   width: 100%;
-  //   border: 3px #fff solid;
-  // }
-  // .item > a p {
-  //   transition: all 0.2s ease;
-  //   opacity: 0;
-  // }
-  // .item:hover > a img {
-  //   opacity: 0.4;
-  // }
-  // .item:hover > a p {
-  //   opacity: 1;
-  // }
+  .proj-git-buttons {
+    margin-top: 5px;
+  }
 
-  img {
+  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+  .flip-card {
+    background-color: transparent;
+    width: 27.25rem;
+    height: 18.313rem;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
     width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 27.25rem;
+    height: 18.313rem;
+    backface-visibility: hidden;
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    width: 27.25rem;
+    height: 18.313rem;
+    background-color: #bbb;
+    color: black;
+  }
+
+  /* Style the back side */
+  .flip-card-back {
+    background-color: black;
+    color: white;
+    transform: rotateY(180deg);
+    border: 3px #fff solid;
+    width: 27.25rem;
+    height: 18.313rem;
+    padding: 20px;
+
+    h3 {
+      font-size: 23px;
+      border-bottom: 1px solid white;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 75px;
+      top: 100%;
+      left: 50%;
+      margin-top: 10px;
+      margin-left: -37.5px; /* Use half of the width to center the tooltip */
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      font-size: 15px;
+      opacity: 0;
+
+      /* Position the tooltip text - see examples below! */
+      position: absolute;
+      z-index: 1;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      animation-delay: 0.4s;
+      animation-fill-mode: forwards;
+      visibility: visible;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%; /* At the top of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent white transparent;
+    }
+
+    i.fab,
+    i.fas {
+      font-size: 35px;
+      padding: 10px;
+    }
+
+    i.fab span,
+    i.fas span {
+      font-weight: 300;
+    }
+  }
+
+  .project-image {
+    // width: 100%;
+    width: 27.25rem;
+    height: 18.313rem;
     border: 3px #fff solid;
 
-    &:hover {
-      opacity: 0.5;
-      border-color: $secondary-color;
-      @include easeOut;
-    }
+    // &:hover {
+    //   opacity: 0.5;
+    //   border-color: $secondary-color;
+    //   @include easeOut;
+    // }
   }
   .project-icon {
     font-size: 20px;
@@ -204,11 +309,11 @@ main {
   margin-bottom: 0.3rem;
   z-index: 10;
 
-  // &:hover {
-  //   opacity: 0.5;
-  //   border-color: $secondary-color;
-  //   @include easeOut;
-  // }
+  &:hover {
+    opacity: 0.5;
+    border-color: $secondary-color;
+    @include easeOut;
+  }
 }
 
 // Button Styles
