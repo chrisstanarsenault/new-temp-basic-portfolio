@@ -197,6 +197,10 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
 
+.sub-title {
+  font-size: 16px;
+  padding-left: 30px; }
+
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -244,7 +248,7 @@ main {
     border: 3px #fff solid;
     width: 27.25rem;
     height: 18.313rem;
-    padding: 20px;
+    padding: 30px 20px;
     /* Tooltip container */
     /* Tooltip text */
     /* Show the tooltip text when you mouse over the tooltip container */ }
@@ -252,7 +256,8 @@ main {
       font-size: 23px;
       border-bottom: 1px solid white;
       margin-left: 50px;
-      margin-right: 50px; }
+      margin-right: 50px;
+      margin-bottom: 30px; }
     .projects .flip-card-back .tooltip {
       position: relative;
       display: inline-block;

@@ -141,6 +141,11 @@ main {
 }
 
 // Work/Projects
+.sub-title {
+  font-size: 16px;
+  padding-left: 30px;
+}
+
 .projects {
   display: grid;
   grid-gap: 0.7rem;
@@ -202,13 +207,14 @@ main {
     border: 3px #fff solid;
     width: 27.25rem;
     height: 18.313rem;
-    padding: 20px;
+    padding: 30px 20px;
 
     h3 {
       font-size: 23px;
       border-bottom: 1px solid white;
       margin-left: 50px;
       margin-right: 50px;
+      margin-bottom: 30px;
     }
 
     /* Tooltip container */
@@ -281,16 +287,9 @@ main {
   }
 
   .project-image {
-    // width: 100%;
     width: 27.25rem;
     height: 18.313rem;
     border: 3px #fff solid;
-
-    // &:hover {
-    //   opacity: 0.5;
-    //   border-color: $secondary-color;
-    //   @include easeOut;
-    // }
   }
   .project-icon {
     font-size: 20px;
