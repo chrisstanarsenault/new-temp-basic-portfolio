@@ -57,7 +57,6 @@ header {
 
 main {
   padding: 4rem;
-  // height: 100%;
   min-height: calc(100vh - 60px);
 
   .icons {
@@ -74,11 +73,19 @@ main {
   }
 
   .download-file {
-    margin-left: 40px;
+    position: relative;
+
+    & a {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+    }
 
     &-text {
+      position: relative;
       font-size: 20px;
       font-weight: 400;
+      right: 20px;
     }
   }
 
@@ -143,7 +150,7 @@ main {
 // Work/Projects
 .sub-title {
   font-size: 16px;
-  padding-left: 30px;
+  display: block;
 }
 
 .projects {
@@ -215,6 +222,10 @@ main {
       margin-left: 50px;
       margin-right: 50px;
       margin-bottom: 30px;
+    }
+
+    & .dev-icon {
+      font-size: 40px;
     }
 
     /* Tooltip container */

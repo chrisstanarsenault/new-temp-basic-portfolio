@@ -159,10 +159,16 @@ main {
         color: #eece1a;
         transition: all 0.5s ease-out; }
   main .download-file {
-    margin-left: 40px; }
+    position: relative; }
+    main .download-file a {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column; }
     main .download-file-text {
+      position: relative;
       font-size: 20px;
-      font-weight: 400; }
+      font-weight: 400;
+      right: 20px; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -199,7 +205,7 @@ main {
 
 .sub-title {
   font-size: 16px;
-  padding-left: 30px; }
+  display: block; }
 
 .projects {
   display: grid;
@@ -258,6 +264,8 @@ main {
       margin-left: 50px;
       margin-right: 50px;
       margin-bottom: 30px; }
+    .projects .flip-card-back .dev-icon {
+      font-size: 40px; }
     .projects .flip-card-back .tooltip {
       position: relative;
       display: inline-block;
@@ -377,7 +385,8 @@ main {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(auto-fill, 437px);
+    justify-content: space-evenly; } }
 
 @media screen and (min-width: 769) and (max-width: 1170px) {
   .projects {
@@ -386,10 +395,21 @@ main {
 @media screen and (max-width: 768px) {
   .projects {
     grid-template-columns: repeat(2, 1fr); }
+  main h2 .sm-heading-tag {
+    bottom: 0;
+    display: block; }
+  .icons {
+    display: flex;
+    justify-content: center; }
+  span.download-file {
+    position: relative;
+    margin-left: -15px; }
+    span.download-file-text {
+      right: 0; }
   main {
     align-items: center;
     text-align: center; }
-    main lg-heading {
+    main .lg-heading {
       line-height: 1;
       margin-bottom: 1rem; }
   ul.menu-nav,
@@ -418,9 +438,35 @@ main {
 @media screen and (max-width: 500px) {
   h1.lg-heading {
     margin-top: 10vh;
-    font-size: 5rem; }
-  span.sm-heading-tag {
+    font-size: 4rem; }
+  .icons .download-file {
+    margin-left: -15px; }
+  .download-file a {
+    display: flex;
+    flex-direction: column; }
+  main h2 .sm-heading-tag {
     padding-top: 10px;
-    display: block; }
+    display: block;
+    font-size: 13px; }
+  .about-info .bio-image {
+    height: 150px;
+    width: 150px; }
+  main#about .job {
+    margin-left: -2rem;
+    margin-right: -2rem; }
+  main#work {
+    padding: 10px; }
   .projects {
-    grid-template-columns: repeat(1, 1fr); } }
+    grid-template-columns: repeat(1, minmax(300px, 1fr)); }
+    .projects .project-image {
+      width: 100%; }
+    .projects .flip-card-front {
+      width: 100%; }
+    .projects .flip-card-back {
+      width: 100%; }
+    .projects .flip-card-inner {
+      width: 100%; }
+    .projects .flip-card {
+      width: 100%; }
+  main#contact .contact-container .contact-container-primary-text {
+    font-size: 20px; } }

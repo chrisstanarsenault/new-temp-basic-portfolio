@@ -1,7 +1,8 @@
 // Widescreens
 @include mediaXl {
   .projects {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, 437px);
+    justify-content: space-evenly;
   }
 }
 
@@ -18,11 +19,30 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  main h2 .sm-heading-tag {
+    bottom: 0;
+    display: block;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+  }
+
+  span.download-file {
+    position: relative;
+    margin-left: -15px;
+
+    &-text {
+      right: 0;
+    }
+  }
+
   main {
     align-items: center;
     text-align: center;
 
-    lg-heading {
+    .lg-heading {
       line-height: 1;
       margin-bottom: 1rem;
     }
@@ -66,15 +86,63 @@
 @include mediaSm {
   h1.lg-heading {
     margin-top: 10vh;
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
-  span.sm-heading-tag {
+  .icons .download-file {
+    margin-left: -15px;
+  }
+
+  .download-file a {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main h2 .sm-heading-tag {
     padding-top: 10px;
     display: block;
+    font-size: 13px;
+  }
+
+  .about-info .bio-image {
+    height: 150px;
+    width: 150px;
+  }
+
+  main#about .job {
+    margin-left: -2rem;
+    margin-right: -2rem;
+  }
+
+  main#work {
+    padding: 10px;
   }
 
   .projects {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, minmax(300px, 1fr));
+
+    & .project-image {
+      width: 100%;
+    }
+
+    & .flip-card-front {
+      width: 100%;
+    }
+
+    & .flip-card-back {
+      width: 100%;
+    }
+
+    & .flip-card-inner {
+      width: 100%;
+    }
+
+    & .flip-card {
+      width: 100%;
+    }
+  }
+
+  main#contact .contact-container .contact-container-primary-text {
+    font-size: 20px;
   }
 }
