@@ -4,12 +4,16 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
+  -webkit-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
     background: #ffffff;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -42,12 +46,16 @@
     background: #373737;
     list-style: none;
     transform: translate3d(0, -100%, 0);
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #444;
     transform: translate3d(0, 100%, 0);
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
     .menu-branding.show {
       transform: translate3d(0, 0, 0); }
@@ -60,6 +68,8 @@
       border: solid 3px #eece1a; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
@@ -74,6 +84,8 @@
     font-weight: 300;
     color: #ffffff;
     text-decoration: none;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
     .menu .nav-link:hover {
       color: #eece1a; }
@@ -91,6 +103,7 @@
   transition-delay: 0.4s; }
 
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
 body {
@@ -157,12 +170,19 @@ main {
       padding: 0.4rem; }
       main .icons a:hover {
         color: #eece1a;
+        -webkit-transition: all 0.5s ease-out;
+        -o-transition: all 0.5s ease-out;
         transition: all 0.5s ease-out; }
   main .download-file {
     position: relative; }
     main .download-file a {
       position: relative;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
       display: inline-flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
       flex-direction: column; }
     main .download-file-text {
       position: relative;
@@ -175,16 +195,24 @@ main {
       margin-top: 20vh; }
 
 .about-info {
+  display: -ms-grid;
   display: grid;
   grid-gap: 30px;
+  -ms-grid-rows: auto 30px auto;
   grid-template-areas: "bioimage bio bio" "job1 job2 job3";
+  -ms-grid-columns: 1fr 30px 1fr 30px 1fr;
   grid-template-columns: repeat(3, 1fr); }
   .about-info .bio-image {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
     grid-area: bioimage;
     margin: auto;
     border-radius: 50%;
     border: #eece1a 3px solid; }
   .about-info .bio {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 3;
     grid-area: bio;
     font-size: 1.5; }
   .about-info .job {
@@ -197,10 +225,16 @@ main {
     .about-info .job .job-title {
       font-size: 18px; }
   .about-info .job-1 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
     grid-area: job1; }
   .about-info .job-2 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
     grid-area: job2; }
   .about-info .job-3 {
+    -ms-grid-row: 3;
+    -ms-grid-column: 5;
     grid-area: job3; }
 
 .sub-title {
@@ -208,8 +242,10 @@ main {
   display: block; }
 
 .projects {
+  display: -ms-grid;
   display: grid;
   grid-gap: 0.7rem;
+  -ms-grid-columns: 1fr 0.7rem 1fr 0.7rem 1fr;
   grid-template-columns: repeat(3, 1fr);
   /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
   /* This container is needed to position the front and back side */
@@ -225,6 +261,7 @@ main {
     background-color: transparent;
     width: 27.25rem;
     height: 18.313rem;
+    -webkit-perspective: 1000px;
     perspective: 1000px;
     /* Remove this if you don't want the 3D effect */ }
   .projects .flip-card-inner {
@@ -232,15 +269,22 @@ main {
     width: 100%;
     height: 100%;
     text-align: center;
+    -webkit-transition: -webkit-transform 0.8s;
+    transition: -webkit-transform 0.8s;
+    -o-transition: transform 0.8s;
     transition: transform 0.8s;
+    transition: transform 0.8s, -webkit-transform 0.8s;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d; }
   .projects .flip-card:hover .flip-card-inner {
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg); }
   .projects .flip-card-front,
   .projects .flip-card-back {
     position: absolute;
     width: 27.25rem;
     height: 18.313rem;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; }
   .projects .flip-card-front {
     width: 27.25rem;
@@ -250,11 +294,13 @@ main {
   .projects .flip-card-back {
     background-color: black;
     color: white;
+    -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
     border: 3px #fff solid;
     width: 27.25rem;
     height: 18.313rem;
     padding: 30px 20px;
+    z-index: 1;
     /* Tooltip container */
     /* Tooltip text */
     /* Show the tooltip text when you mouse over the tooltip container */ }
@@ -289,15 +335,25 @@ main {
       position: absolute;
       z-index: 1; }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 @keyframes fadeIn {
   0% {
     opacity: 0; }
   100% {
     opacity: 1; } }
     .projects .flip-card-back .tooltip:hover .tooltiptext {
+      -webkit-animation-name: fadeIn;
       animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
       animation-duration: 1s;
+      -webkit-animation-delay: 0.4s;
       animation-delay: 0.4s;
+      -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards;
       visibility: visible; }
     .projects .flip-card-back .tooltip .tooltiptext::after {
@@ -338,6 +394,8 @@ main {
   #world-legal-summit:hover {
     opacity: 0.5;
     border-color: #eece1a;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
 
 .btn, .btn-dark, .btn-light {
@@ -358,9 +416,16 @@ main {
   color: #333; }
 
 .boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-top: 1rem; }
   .boxes div {
@@ -368,6 +433,8 @@ main {
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
+    -webkit-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
       padding: 0.5rem 1.5rem;
@@ -386,20 +453,28 @@ main {
 @media screen and (min-width: 1171px) {
   .projects {
     grid-template-columns: repeat(auto-fill, 437px);
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly; } }
 
 @media screen and (min-width: 769) and (max-width: 1170px) {
   .projects {
+    -ms-grid-columns: 1fr [3];
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
   .projects {
+    -ms-grid-columns: 1fr [2];
     grid-template-columns: repeat(2, 1fr); }
   main h2 .sm-heading-tag {
     bottom: 0;
     display: block; }
   .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center; }
   span.download-file {
     position: relative;
@@ -407,6 +482,8 @@ main {
     span.download-file-text {
       right: 0; }
   main {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center; }
     main .lg-heading {
@@ -419,13 +496,16 @@ main {
     min-height: 0; }
     ul.menu-nav.show,
     div.menu-branding.show {
+      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
   .menu-nav {
+    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     height: 75vh;
     font-size: 24px; }
   .menu-branding {
     height: 25vh;
+    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
       background: url("../img/chris-portrait-small.jpg");
@@ -433,6 +513,7 @@ main {
       height: 150px; }
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
@@ -442,7 +523,12 @@ main {
   .icons .download-file {
     margin-left: -15px; }
   .download-file a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column; }
   main h2 .sm-heading-tag {
     padding-top: 10px;
@@ -457,15 +543,12 @@ main {
   main#work {
     padding: 10px; }
   .projects {
+    -ms-grid-columns: minmax(300px, 1fr) [1];
     grid-template-columns: repeat(1, minmax(300px, 1fr)); }
-    .projects .project-image {
-      width: 100%; }
-    .projects .flip-card-front {
-      width: 100%; }
-    .projects .flip-card-back {
-      width: 100%; }
-    .projects .flip-card-inner {
-      width: 100%; }
+    .projects .project-image,
+    .projects .flip-card-front,
+    .projects .flip-card-back,
+    .projects .flip-card-inner,
     .projects .flip-card {
       width: 100%; }
   main#contact .contact-container .contact-container-primary-text {

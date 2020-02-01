@@ -2,6 +2,8 @@
 @include mediaXl {
   .projects {
     grid-template-columns: repeat(auto-fill, 437px);
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
   }
 }
@@ -9,6 +11,7 @@
 // Desktops and Laptops
 @include mediaLg {
   .projects {
+    -ms-grid-columns: (1fr) [3];
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -16,6 +19,7 @@
 // Tablets and Small Laptops
 @include mediaMd {
   .projects {
+    -ms-grid-columns: (1fr) [2];
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -25,7 +29,11 @@
   }
 
   .icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
   }
 
@@ -39,6 +47,8 @@
   }
 
   main {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     text-align: center;
 
@@ -55,11 +65,13 @@
     min-height: 0;
 
     &.show {
+      -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
     }
   }
 
   .menu-nav {
+    -webkit-transform: translate3d(-100%, 0, 0);
     transform: translate3d(-100%, 0, 0);
     height: 75vh;
     font-size: 24px;
@@ -67,6 +79,7 @@
 
   .menu-branding {
     height: 25vh;
+    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
 
     .portrait {
@@ -78,6 +91,7 @@
 
   .about-info {
     grid-template-areas: "bioimage" "bio" "job1" "job2" "job3";
+    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
@@ -94,7 +108,12 @@
   }
 
   .download-file a {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
   }
 
@@ -119,24 +138,13 @@
   }
 
   .projects {
+    -ms-grid-columns: (minmax(300px, 1fr)) [1];
     grid-template-columns: repeat(1, minmax(300px, 1fr));
 
-    & .project-image {
-      width: 100%;
-    }
-
-    & .flip-card-front {
-      width: 100%;
-    }
-
-    & .flip-card-back {
-      width: 100%;
-    }
-
-    & .flip-card-inner {
-      width: 100%;
-    }
-
+    & .project-image,
+    & .flip-card-front,
+    & .flip-card-back,
+    & .flip-card-inner,
     & .flip-card {
       width: 100%;
     }
