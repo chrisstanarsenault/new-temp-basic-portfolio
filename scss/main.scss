@@ -144,7 +144,12 @@ main {
     }
 
     .job-title {
+      display: grid;
       font-size: 18px;
+
+      & span {
+        font-weight: 300;
+      }
     }
   }
 
