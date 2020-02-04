@@ -550,5 +550,7 @@ main {
     .projects .flip-card-inner,
     .projects .flip-card {
       width: 100%; }
+    .projects .flip-card .flip-card-back p {
+      font-size: 14px !important; }
   main#contact .contact-container .contact-container-primary-text {
     font-size: 20px; } }
