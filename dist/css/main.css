@@ -261,6 +261,7 @@ main {
     margin-top: 5px; }
   .projects .flip-card {
     background-color: transparent;
+    cursor: pointer;
     width: 27.25rem;
     height: 18.313rem;
     -webkit-perspective: 1000px;
