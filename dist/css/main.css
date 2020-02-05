@@ -62,7 +62,7 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url("../img/chris-portrait-normal.jpg");
+      background: url("../img/chris-portrait-250.jpg");
       background-size: cover;
       border-radius: 50%;
       border: solid 3px #339595; }
@@ -508,7 +508,7 @@ main {
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url("../img/chris-portrait-small.jpg");
+      background: url("../img/chris-portrait-150.jpg");
       width: 150px;
       height: 150px; }
   .about-info {
