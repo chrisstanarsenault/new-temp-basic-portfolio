@@ -257,8 +257,156 @@ main {
   /* Style the back side */ }
   .projects .project-description {
     display: none; }
+  .projects h3 {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding-bottom: 5px; }
   .projects .proj-git-buttons {
     margin-top: 5px; }
+  .projects .project-card {
+    position: relative;
+    border: 3px solid #fff;
+    padding: 10px;
+    width: 100%;
+    height: 293px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+  .projects .project-card-wls {
+    background-image: url(../img/projects/world-legal-summit-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card-go-shorty {
+    background-image: url(../img/projects/go-shorty-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card-cotd {
+    background-image: url(../img/projects/catch-of-the-day-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card-movie-database {
+    background-image: url(../img/projects/movie-database-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card-hookeai-poke {
+    background-image: url(../img/projects/hookeai-poke-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card-chatty-app {
+    background-image: url(../img/projects/chatty-app-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card-tweeter {
+    background-image: url(../img/projects/tweeter-1280x830.jpg);
+    background-size: cover; }
+  .projects .project-card .info-slider-button {
+    background: #339595;
+    padding: 10px;
+    border-radius: 10px;
+    order: 3;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 3px 3px 5px #444; }
+  .projects .project-card .stack-icons {
+    background: rgba(68, 68, 68, 0.8);
+    padding: 5px 15px;
+    order: 1;
+    align-self: flex-end;
+    /* Tooltip container */
+    /* Tooltip text */
+    /* Show the tooltip text when you mouse over the tooltip container */ }
+    .projects .project-card .stack-icons .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help; }
+    .projects .project-card .stack-icons .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 75px;
+      top: 100%;
+      left: 50%;
+      margin-top: 10px;
+      margin-left: -37.5px;
+      /* Use half of the width to center the tooltip */
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      font-size: 15px;
+      opacity: 0;
+      position: absolute;
+      z-index: 1; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+    .projects .project-card .stack-icons .tooltip:hover .tooltiptext {
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      visibility: visible; }
+    .projects .project-card .stack-icons .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      /* At the top of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent white transparent; }
+    .projects .project-card .stack-icons i.fab,
+    .projects .project-card .stack-icons i.fas,
+    .projects .project-card .stack-icons .dev-icon {
+      font-size: 30px;
+      padding: 0 5px; }
+    .projects .project-card .stack-icons i.fab span,
+    .projects .project-card .stack-icons i.fas span {
+      font-weight: 300; }
+  .projects .project-info-slider {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: 0 0 9px #444 inset;
+    background-color: whitesmoke;
+    color: #444;
+    overflow-y: hidden;
+    max-height: 0;
+    /* approximate max height */
+    transition: all 1s ease-out;
+    z-index: -1; }
+    .projects .project-info-slider p {
+      padding: 0 10px; }
+  .projects .project-info-slider-open {
+    max-height: 500px;
+    z-index: 1;
+    transition: all 2s ease-out; }
+  .projects .card-face-info {
+    position: absolute;
+    width: 27.25rem;
+    height: 18.313rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    color: white;
+    width: 27.25rem;
+    height: 18.313rem;
+    padding: 30px 20px;
+    z-index: 2;
+    text-align: center; }
+    .projects .card-face-info h3 {
+      font-size: 23px;
+      border-bottom: 1px solid white;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-bottom: 30px; }
   .projects .flip-card {
     background-color: transparent;
     cursor: pointer;
@@ -279,100 +427,11 @@ main {
     transition: transform 0.8s, -webkit-transform 0.8s;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d; }
-  .projects .flip-card-front,
-  .projects .flip-card-back {
-    position: absolute;
-    width: 27.25rem;
-    height: 18.313rem;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden; }
   .projects .flip-card-front {
     width: 27.25rem;
     height: 18.313rem;
     background-color: #bbb;
     color: black; }
-  .projects .flip-card-back {
-    background-color: black;
-    color: white;
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    border: 3px #fff solid;
-    width: 27.25rem;
-    height: 18.313rem;
-    padding: 30px 20px;
-    z-index: 1;
-    /* Tooltip container */
-    /* Tooltip text */
-    /* Show the tooltip text when you mouse over the tooltip container */ }
-    .projects .flip-card-back h3 {
-      font-size: 23px;
-      border-bottom: 1px solid white;
-      margin-left: 50px;
-      margin-right: 50px;
-      margin-bottom: 30px; }
-    .projects .flip-card-back .dev-icon {
-      font-size: 40px; }
-    .projects .flip-card-back .tooltip {
-      position: relative;
-      display: inline-block;
-      cursor: help; }
-    .projects .flip-card-back .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 75px;
-      top: 100%;
-      left: 50%;
-      margin-top: 10px;
-      margin-left: -37.5px;
-      /* Use half of the width to center the tooltip */
-      background-color: white;
-      color: black;
-      text-align: center;
-      padding: 5px 0;
-      border-radius: 6px;
-      font-size: 15px;
-      opacity: 0;
-      /* Position the tooltip text - see examples below! */
-      position: absolute;
-      z-index: 1; }
-
-@-webkit-keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } }
-    .projects .flip-card-back .tooltip:hover .tooltiptext {
-      -webkit-animation-name: fadeIn;
-      animation-name: fadeIn;
-      -webkit-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-delay: 0.4s;
-      animation-delay: 0.4s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      visibility: visible; }
-    .projects .flip-card-back .tooltip .tooltiptext::after {
-      content: " ";
-      position: absolute;
-      bottom: 100%;
-      /* At the top of the tooltip */
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: transparent transparent white transparent; }
-    .projects .flip-card-back i.fab,
-    .projects .flip-card-back i.fas {
-      font-size: 35px;
-      padding: 10px; }
-    .projects .flip-card-back i.fab span,
-    .projects .flip-card-back i.fas span {
-      font-weight: 300; }
   .projects .project-image {
     width: 27.25rem;
     height: 18.313rem;
@@ -541,7 +600,7 @@ main {
     margin-left: -2rem;
     margin-right: -2rem; }
   main#work {
-    padding: 10px; }
+    padding: 20px; }
   .projects {
     -ms-grid-columns: minmax(300px, 1fr) [1];
     grid-template-columns: repeat(1, minmax(300px, 1fr)); }
@@ -553,5 +612,9 @@ main {
       width: 100%; }
     .projects .flip-card .flip-card-back p {
       font-size: 14px !important; }
+    .projects .project-card .stack-icons i.fab,
+    .projects .project-card .stack-icons i.fas,
+    .projects .project-card .stack-icons .dev-icon {
+      font-size: 25px; }
   main#contact .contact-container .contact-container-primary-text {
     font-size: 20px; } }

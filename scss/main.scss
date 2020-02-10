@@ -189,8 +189,216 @@ main {
     display: none;
   }
 
+  h3 {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding-bottom: 5px;
+  }
+
   .proj-git-buttons {
     margin-top: 5px;
+  }
+
+  .project-card {
+    position: relative;
+    border: 3px solid #fff;
+    padding: 10px;
+    width: 100%;
+    height: 293px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .project-card-wls {
+    background-image: url(../img/projects/world-legal-summit-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card-go-shorty {
+    background-image: url(../img/projects/go-shorty-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card-cotd {
+    background-image: url(../img/projects/catch-of-the-day-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card-movie-database {
+    background-image: url(../img/projects/movie-database-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card-hookeai-poke {
+    background-image: url(../img/projects/hookeai-poke-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card-chatty-app {
+    background-image: url(../img/projects/chatty-app-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card-tweeter {
+    background-image: url(../img/projects/tweeter-1280x830.jpg);
+    background-size: cover;
+  }
+
+  .project-card .info-slider-button {
+    background: $secondary-color;
+    padding: 10px;
+    border-radius: 10px;
+    order: 3;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 3px 3px 5px $primary-color;
+  }
+
+  .project-card .stack-icons {
+    background: rgba(68, 68, 68, 0.8);
+    padding: 5px 15px;
+    order: 1;
+    align-self: flex-end;
+
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: help;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 75px;
+      top: 100%;
+      left: 50%;
+      margin-top: 10px;
+      margin-left: -37.5px; /* Use half of the width to center the tooltip */
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      font-size: 15px;
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    @-webkit-keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      -webkit-animation-name: fadeIn;
+      animation-name: fadeIn;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-delay: 0.2s;
+      animation-delay: 0.2s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      visibility: visible;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      bottom: 100%; /* At the top of the tooltip */
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent white transparent;
+    }
+
+    i.fab,
+    i.fas,
+    .dev-icon {
+      font-size: 30px;
+      padding: 0 5px;
+    }
+
+    i.fab span,
+    i.fas span {
+      font-weight: 300;
+    }
+  }
+
+  .project-info-slider {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    box-shadow: 0 0 9px $primary-color inset;
+    background-color: whitesmoke;
+    color: $primary-color;
+    overflow-y: hidden;
+    max-height: 0; /* approximate max height */
+    transition: all 1s ease-out;
+    z-index: -1;
+
+    p {
+      padding: 0 10px;
+    }
+  }
+
+  .project-info-slider-open {
+    max-height: 500px;
+    z-index: 1;
+    transition: all 2s ease-out;
+  }
+
+  // .project-card:after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   // z-index: -1;
+  //   background: rgba(68, 68, 68, 0.9);
+  // }
+
+  .card-face-info {
+    position: absolute;
+    width: 27.25rem;
+    height: 18.313rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    color: white;
+    width: 27.25rem;
+    height: 18.313rem;
+    padding: 30px 20px;
+    z-index: 2;
+    text-align: center;
+
+    h3 {
+      font-size: 23px;
+      border-bottom: 1px solid white;
+      margin-left: 50px;
+      margin-right: 50px;
+      margin-bottom: 30px;
+    }
   }
 
   /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
@@ -221,11 +429,6 @@ main {
   /* Position the front and back side */
   .flip-card-front,
   .flip-card-back {
-    position: absolute;
-    width: 27.25rem;
-    height: 18.313rem;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
 
   /* Style the front side (fallback if image is missing) */
@@ -238,108 +441,6 @@ main {
 
   /* Style the back side */
   .flip-card-back {
-    background-color: black;
-    color: white;
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    border: 3px #fff solid;
-    width: 27.25rem;
-    height: 18.313rem;
-    padding: 30px 20px;
-    z-index: 1;
-
-    h3 {
-      font-size: 23px;
-      border-bottom: 1px solid white;
-      margin-left: 50px;
-      margin-right: 50px;
-      margin-bottom: 30px;
-    }
-
-    & .dev-icon {
-      font-size: 40px;
-    }
-
-    /* Tooltip container */
-    .tooltip {
-      position: relative;
-      display: inline-block;
-      cursor: help;
-    }
-
-    /* Tooltip text */
-    .tooltip .tooltiptext {
-      visibility: hidden;
-      width: 75px;
-      top: 100%;
-      left: 50%;
-      margin-top: 10px;
-      margin-left: -37.5px; /* Use half of the width to center the tooltip */
-      background-color: white;
-      color: black;
-      text-align: center;
-      padding: 5px 0;
-      border-radius: 6px;
-      font-size: 15px;
-      opacity: 0;
-
-      /* Position the tooltip text - see examples below! */
-      position: absolute;
-      z-index: 1;
-    }
-
-    @-webkit-keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    /* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
-      -webkit-animation-name: fadeIn;
-      animation-name: fadeIn;
-      -webkit-animation-duration: 1s;
-      animation-duration: 1s;
-      -webkit-animation-delay: 0.4s;
-      animation-delay: 0.4s;
-      -webkit-animation-fill-mode: forwards;
-      animation-fill-mode: forwards;
-      visibility: visible;
-    }
-
-    .tooltip .tooltiptext::after {
-      content: " ";
-      position: absolute;
-      bottom: 100%; /* At the top of the tooltip */
-      left: 50%;
-      margin-left: -5px;
-      border-width: 5px;
-      border-style: solid;
-      border-color: transparent transparent white transparent;
-    }
-
-    i.fab,
-    i.fas {
-      font-size: 35px;
-      padding: 10px;
-    }
-
-    i.fab span,
-    i.fas span {
-      font-weight: 300;
-    }
   }
 
   .project-image {

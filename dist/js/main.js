@@ -4,21 +4,24 @@ const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
-const cardForFlip = document.getElementsByClassName("flip-card-inner");
+const cardForSliding = document.querySelectorAll(".project-info-slider");
+// const infoSliderButton = document.getElementsByClassName("info-slider-button");
+const infoSliderButton = document.querySelectorAll(".info-slider-button");
 
 // Set Initial State Of Menu
 let showMenu = false;
 
-// Set Initial State Of Card Flip Animation
-let isCardFlipped = false;
+// Set Initial State of Info-Card
+let isCardOpen = false;
 
-const flipCard = function() {
-  if (!isCardFlipped) {
-    this.style.transform = "rotateY(180deg)";
-    isCardFlipped = true;
+const toggleInfoSlider = i => {
+  if (!isCardOpen) {
+    cardForSliding[i].classList.add("project-info-slider-open");
+    // console.log(cardForSliding[1]);
+    isCardOpen = true;
   } else {
-    this.style.transform = "rotateY(0)";
-    isCardFlipped = false;
+    cardForSliding[i].classList.remove("project-info-slider-open");
+    isCardOpen = false;
   }
 };
 
@@ -45,6 +48,11 @@ const toggleMenu = () => {
 };
 // console.log(cardBackside);
 menuBtn.addEventListener("click", toggleMenu);
-for (let i = 0; i < cardForFlip.length; i++) {
-  cardForFlip[i].addEventListener("click", flipCard);
+
+for (let i = 0; i < infoSliderButton.length; i++) {
+  infoSliderButton[i].addEventListener("click", function() {
+    toggleInfoSlider(i);
+  });
 }
+
+// infoSliderButton.addEventListener("click", toggleInfoSlider);

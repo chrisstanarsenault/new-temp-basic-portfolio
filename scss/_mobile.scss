@@ -134,7 +134,7 @@
   }
 
   main#work {
-    padding: 10px;
+    padding: 20px;
   }
 
   .projects {
@@ -151,6 +151,12 @@
 
     & .flip-card .flip-card-back p {
       font-size: 14px !important;
+    }
+
+    & .project-card .stack-icons i.fab,
+    & .project-card .stack-icons i.fas,
+    & .project-card .stack-icons .dev-icon {
+      font-size: 25px;
     }
   }
 
