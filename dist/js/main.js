@@ -5,7 +5,6 @@ const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
 const cardForSliding = document.querySelectorAll(".project-info-slider");
-// const infoSliderButton = document.getElementsByClassName("info-slider-button");
 const infoSliderButton = document.querySelectorAll(".info-slider-button");
 
 // Set Initial State Of Menu
@@ -17,7 +16,6 @@ let isCardOpen = false;
 const toggleInfoSlider = i => {
   if (!isCardOpen) {
     cardForSliding[i].classList.add("project-info-slider-open");
-    // console.log(cardForSliding[1]);
     isCardOpen = true;
   } else {
     cardForSliding[i].classList.remove("project-info-slider-open");
@@ -32,8 +30,6 @@ const toggleMenu = () => {
     menuNav.classList.add("show");
     menuBranding.classList.add("show");
     navItems.forEach(item => item.classList.add("show"));
-
-    // Set Menu State
     showMenu = true;
   } else {
     menuBtn.classList.remove("close");
@@ -41,12 +37,10 @@ const toggleMenu = () => {
     menuNav.classList.remove("show");
     menuBranding.classList.remove("show");
     navItems.forEach(item => item.classList.remove("show"));
-
-    // Set Menu State
     showMenu = false;
   }
 };
-// console.log(cardBackside);
+
 menuBtn.addEventListener("click", toggleMenu);
 
 for (let i = 0; i < infoSliderButton.length; i++) {
@@ -54,5 +48,3 @@ for (let i = 0; i < infoSliderButton.length; i++) {
     toggleInfoSlider(i);
   });
 }
-
-// infoSliderButton.addEventListener("click", toggleInfoSlider);

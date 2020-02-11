@@ -16,7 +16,7 @@
     @include easeOut;
   }
 
-  // Rotate Into X With Menu Lines
+  // Hamburger Button - Rotate Into X With Menu Lines
   &.close {
     transform: rotate(180deg);
 
@@ -42,7 +42,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  // opacity: 0.9;
   visibility: hidden;
 
   &.show {

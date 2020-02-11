@@ -185,22 +185,22 @@ main {
   -ms-grid-columns: 1fr 0.7rem 1fr 0.7rem 1fr;
   grid-template-columns: repeat(3, 1fr);
 
-  .project-description {
+  & .project-description {
     display: none;
   }
 
-  h3 {
+  & h3 {
     text-align: center;
     font-size: 30px;
     letter-spacing: 2px;
     padding-bottom: 5px;
   }
 
-  .proj-git-buttons {
+  & .proj-git-buttons {
     margin-top: 5px;
   }
 
-  .project-card {
+  & .project-card {
     position: relative;
     border: 3px solid #fff;
     padding: 10px;
@@ -211,42 +211,42 @@ main {
     justify-content: space-between;
   }
 
-  .project-card-wls {
+  & .project-card-wls {
     background-image: url(../img/projects/world-legal-summit-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card-go-shorty {
+  & .project-card-go-shorty {
     background-image: url(../img/projects/go-shorty-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card-cotd {
+  & .project-card-cotd {
     background-image: url(../img/projects/catch-of-the-day-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card-movie-database {
+  & .project-card-movie-database {
     background-image: url(../img/projects/movie-database-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card-hookeai-poke {
+  & .project-card-hookeai-poke {
     background-image: url(../img/projects/hookeai-poke-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card-chatty-app {
+  & .project-card-chatty-app {
     background-image: url(../img/projects/chatty-app-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card-tweeter {
+  & .project-card-tweeter {
     background-image: url(../img/projects/tweeter-1280x830.jpg);
     background-size: cover;
   }
 
-  .project-card .info-slider-button {
+  & .project-card .info-slider-button {
     background: $secondary-color;
     padding: 10px;
     border-radius: 10px;
@@ -256,21 +256,21 @@ main {
     box-shadow: 3px 3px 5px $primary-color;
   }
 
-  .project-card .stack-icons {
+  & .project-card .stack-icons {
     background: rgba(68, 68, 68, 0.8);
     padding: 5px 15px;
     order: 1;
     align-self: flex-end;
 
     /* Tooltip container */
-    .tooltip {
+    & .tooltip {
       position: relative;
       display: inline-block;
       cursor: help;
     }
 
     /* Tooltip text */
-    .tooltip .tooltiptext {
+    & .tooltip .tooltiptext {
       visibility: hidden;
       width: 75px;
       top: 100%;
@@ -307,7 +307,7 @@ main {
     }
 
     /* Show the tooltip text when you mouse over the tooltip container */
-    .tooltip:hover .tooltiptext {
+    & .tooltip:hover .tooltiptext {
       -webkit-animation-name: fadeIn;
       animation-name: fadeIn;
       -webkit-animation-duration: 1s;
@@ -319,7 +319,7 @@ main {
       visibility: visible;
     }
 
-    .tooltip .tooltiptext::after {
+    & .tooltip .tooltiptext::after {
       content: " ";
       position: absolute;
       bottom: 100%; /* At the top of the tooltip */
@@ -343,7 +343,7 @@ main {
     }
   }
 
-  .project-info-slider {
+  & .project-info-slider {
     border-left: 1px solid white;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
@@ -355,31 +355,18 @@ main {
     transition: all 1s ease-out;
     z-index: -1;
 
-    p {
+    & p {
       padding: 0 10px;
     }
   }
 
-  .project-info-slider-open {
+  & .project-info-slider-open {
     max-height: 500px;
     z-index: 1;
     transition: all 2s ease-out;
   }
 
-  // .project-card:after {
-  //   content: "";
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   // z-index: -1;
-  //   background: rgba(68, 68, 68, 0.9);
-  // }
-
-  .card-face-info {
+  & .card-face-info {
     position: absolute;
     width: 27.25rem;
     height: 18.313rem;
@@ -392,7 +379,7 @@ main {
     z-index: 2;
     text-align: center;
 
-    h3 {
+    & h3 {
       font-size: 23px;
       border-bottom: 1px solid white;
       margin-left: 50px;
@@ -401,54 +388,13 @@ main {
     }
   }
 
-  /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
-  .flip-card {
-    background-color: transparent;
-    cursor: pointer;
-    width: 27.25rem;
-    height: 18.313rem;
-    -webkit-perspective: 1000px;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
-
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    -webkit-transition: -webkit-transform 0.8s;
-    transition: -webkit-transform 0.8s;
-    -o-transition: transform 0.8s;
-    transition: transform 0.8s;
-    transition: transform 0.8s, -webkit-transform 0.8s;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  /* Position the front and back side */
-  .flip-card-front,
-  .flip-card-back {
-  }
-
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    width: 27.25rem;
-    height: 18.313rem;
-    background-color: #bbb;
-    color: black;
-  }
-
-  /* Style the back side */
-  .flip-card-back {
-  }
-
-  .project-image {
+  & .project-image {
     width: 27.25rem;
     height: 18.313rem;
     border: 3px #fff solid;
   }
-  .project-icon {
+
+  & .project-icon {
     font-size: 20px;
     position: absolute;
     z-index: 9;
@@ -512,31 +458,21 @@ main {
   align-items: center;
   margin-top: 1rem;
 
-  div {
+  & div {
     font-size: 2rem;
     border: 3px #fff solid;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
-    @include easeOut;
 
     &:hover {
-      padding: 0.5rem 1.5rem;
       background: $secondary-color;
       color: set-text-color($secondary-color);
 
-      span {
+      & span {
         color: set-text-color($secondary-color);
       }
     }
   }
-}
-
-#main-footer {
-  text-align: center;
-  padding: 1rem;
-  background: darken($primary-color, 10);
-  color: set-text-color($primary-color);
-  height: 60px;
 }
 
 @import "mobile";
